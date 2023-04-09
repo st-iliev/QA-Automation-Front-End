@@ -18,8 +18,8 @@ namespace Exercises_Appium
         {
             var appiumOptions = new AppiumOptions()
             {
-                PlatformName = "Windows"
-           };
+                PlatformName = appiumServerUri
+            };
             appiumOptions.AddAdditionalCapability("app", sevenZipApp);
             driver = new WindowsDriver<WindowsElement>(new Uri(appiumServerUri),appiumOptions);
             workDir = @"E:\QA\QA Automation\Front-End\7-Zip\workdir\";

@@ -8,7 +8,7 @@ namespace Exercises_Appium___Mobile_Testing
     public class Tests
     {
         private const string appiumServerUri = "http://127.0.0.1:4723/wd/hub";
-        private string summatorAppPath = @"E:\\QA\\QA Automation\\Front-End\\com.example.androidappsummator.apk";
+        private string summatorAppPath = @"WRITE YOUR APP PATH";
         private AndroidDriver<AndroidElement> driver;
         private AndroidElement firstNumberField;
         private AndroidElement secondNumberField;

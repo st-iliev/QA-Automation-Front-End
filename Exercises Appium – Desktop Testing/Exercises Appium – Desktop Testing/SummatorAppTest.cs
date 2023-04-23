@@ -9,7 +9,7 @@ namespace Exercises_Appium___Desktop_Testing
     {
         private AppiumLocalService appiumLocalService;
         private WindowsDriver<WindowsElement> driver;
-        private const string summatorAppPath = @"E:\QA\QA Automation\Front-End\SummatorDesktopApp.exe";
+        private const string summatorAppPath = @"WRITE YOUR APP PATH";
         private WindowsElement firstNumberField;
         private WindowsElement secondNumberField;
         private WindowsElement resultField;

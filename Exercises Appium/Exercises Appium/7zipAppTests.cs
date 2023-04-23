@@ -7,7 +7,7 @@ namespace Exercises_Appium
     public class Tests
     {
         private const string appiumServerUri = "http://127.0.0.1:4723/wd/hub";
-        private string sevenZipApp = @"E:\QA\7-Zip\7zFM.exe";
+        private string sevenZipApp = @"WRITE YOUR APP PATH";
         private WindowsDriver<WindowsElement> driver;
         private WindowsDriver<WindowsElement> desktopDriver;
         private string workDir;
@@ -22,7 +22,7 @@ namespace Exercises_Appium
             };
             appiumOptions.AddAdditionalCapability("app", sevenZipApp);
             driver = new WindowsDriver<WindowsElement>(new Uri(appiumServerUri),appiumOptions);
-            workDir = @"E:\QA\QA Automation\Front-End\7-Zip\workdir\";
+            workDir = @"WRITE YOUR WORK DIRECTORY";
             if (Directory.Exists(workDir))
             {
                 Directory.Delete(workDir, true);
@@ -42,7 +42,7 @@ namespace Exercises_Appium
             archiveFileName = workDir + DateTime.Now.Ticks +".7z";
             archiveName = archiveFileName.Split(@"\")[6];
             var locationFolderField = driver.FindElementByAccessibilityId("1003");
-            locationFolderField.SendKeys(@"E:\QA\7-Zip\" + Keys.Enter);
+            locationFolderField.SendKeys(@"APP PATH" + Keys.Enter);
             var filesList = driver.FindElementByClassName("SysListView32");
             filesList.SendKeys(Keys.Control + 'a');
             var addButton = driver.FindElementByName("Add");

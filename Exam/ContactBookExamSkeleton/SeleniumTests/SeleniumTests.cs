@@ -97,11 +97,10 @@ namespace SeleniumTests
             var createButton = driver.FindElement(By.Id("create"));
             createButton.Click();
 
-            var contacts = driver.FindElements(By.XPath("//html/body/main/div/a"));
-            var lastContactNumber = contacts.Count;
-            var lastContact = driver.FindElement(By.XPath($"//*[@id=\"contact{lastContactNumber}\"]"));
-            var firstNameLabel = lastContact.FindElement(By.XPath($"//a[{lastContactNumber}]/table/tbody/tr[1]/td")).Text;
-            var lastNameLabel = lastContact.FindElement(By.XPath($"//a[{lastContactNumber}]/table/tbody/tr[2]/td")).Text;
+            var contacts = driver.FindElements(By.XPath("//div[@class='contacts-grid']/a"));
+            var lastContact = contacts.Last();
+            var firstNameLabel = lastContact.FindElement(By.ClassName("fname")).FindElement(By.TagName("td")).Text;
+            var lastNameLabel = lastContact.FindElement(By.ClassName("lname")).FindElement(By.TagName("td")).Text;
 
             Assert.That(firstNameLabel,Is.EqualTo("Lebron"));
             Assert.That(lastNameLabel, Is.EqualTo("James"));
